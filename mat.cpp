@@ -42,18 +42,20 @@ namespace ariel{
             col--;
 
             // check if there are a colum that not filled in the spesific iteration
+            if(j < col){
                 for(int i = row-1; i>= k; i--){ //if there is - we fill the colum from the end
                     newMat[i][j] = temp;
                 }
                 j++;
+            }
 
             // check if there are a row that not filled in this spesific iteration
-
+            if (k < row){
                 for (int i = col-1; i>=j; i--){ //if there is - we fill the row from the end
                     newMat[row-1][i] = temp;
                 }
                 row--;
-                
+            }
             // Replace the char after each iteration
             if (temp == x){
                 temp = y;
