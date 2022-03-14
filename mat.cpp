@@ -11,7 +11,7 @@ namespace ariel{
         string ans;
         const int a = 33;
         const int b = 126;
-        if (row %2 == 0 || col%2 ==0 ){
+        if (row % 2 == 0 || col % 2 == 0 ){
             throw runtime_error("The row and column number is always odd");
         }
         if (row < 0 || col < 0 ) {
@@ -24,11 +24,11 @@ namespace ariel{
 
         int k=0; //indexs to check if we fill all the matrix
         int j=0;
-        int r = row; // save the colum and row to print the marix
+        int r = row; // save the original column and row to print the marix
         int c = col;
         char temp = x; 
 
-        while (k < row && j< col){
+        while (k < row && j < col){
 
             //fill the first row in this iteration
             for (int i = j; i<col; i++){  
@@ -41,9 +41,9 @@ namespace ariel{
             }
             col--;
 
-            // check if there are a colum that not filled in the spesific iteration
+            // check if there are a column that not filled in the spesific iteration
             if(j < col){
-                for(int i = row-1; i>= k; i--){ //if there is - we fill the colum from the end
+                for(int i = row-1; i>= k; i--){ //if there is - we fill the column from the end
                     newMat[i][j] = temp;
                 }
                 j++;
@@ -65,7 +65,7 @@ namespace ariel{
             }
         }
 
-        //print the rug
+        //return the rug with string 
         for ( int i = 0; i < r; i++){
             for (int j = 0; j < c; j++){
                 ans += newMat[i][j];
