@@ -24,7 +24,7 @@ namespace ariel{
 
         int k=0; //indexs to check if we fill all the matrix
         int j=0;
-        int r = row; // save the original column and row to print the marix
+        int r = row; // save the original column and row to print the matrix
         int c = col;
         char temp = x; 
 
@@ -63,7 +63,14 @@ namespace ariel{
         }
 
         //return the rug with string 
-        for ( int i = 0; i < r; i++){
+        ans = toString(r,c,newMat);
+
+        return ans;
+    }
+
+    string toString(int r , int c,vector<vector<char>> newMat ){
+        string ans;
+         for ( int i = 0; i < r; i++){
             for (int j = 0; j < c; j++){
                 ans += newMat[i][j];
             }
